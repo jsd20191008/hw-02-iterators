@@ -43,6 +43,19 @@ console.log('Problem 1:')
 
 // Add your code below this line
 
+const firstWhigPresident = presidents
+ .filter(function (arr) {
+    return whigs = arr.party === "Whig"
+  })
+  .map(function(whigs) {
+    return whigs.president
+  })[0]
+
+
+
+console.log(firstWhigPresident)
+
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -65,6 +78,13 @@ Expected Result Shape: An array of objects (with each object representing a pres
 console.log('Problem 2:')
 
 // Add your code below this line
+
+const presidentsNamedJames = presidents.filter(function (name) {
+  return name.president.match(/James/g)
+
+})
+
+console.log(presidentsNamedJames)
 
 // Add your code above this line
 
@@ -93,6 +113,12 @@ console.log('Problem 3:')
 
 // Add your code below this line
 
+const presidentialParties = presidents.map(function (president) {
+  return president.party
+})
+
+console.log(presidentialParties)
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -114,6 +140,14 @@ Expected Result Shape: An array of objects (with each object representing a pres
 console.log('Problem 4:')
 
 // Add your code below this line
+
+const presidentsBetween1850and1900 = presidents.filter(function (name) {
+  let splits = name.took_office.split('-')
+  return splits[0] >= 1850 && splits[0] <= 1900
+
+})
+
+console.log(presidentsBetween1850and1900)
 
 // Add your code above this line
 
@@ -138,6 +172,12 @@ console.log('Problem 5:')
 
 // Add your code below this line
 
+const livingPresidents = presidents.filter(function (name) {
+  return !name.death_year
+})
+
+console.log(livingPresidents)
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -161,6 +201,12 @@ console.log('Problem 6:')
 
 // Add your code below this line
 
+const firstRepublican = presidents.find(function (pres) {
+  return pres.party === "Republican"
+}).president
+
+console.log(firstRepublican)
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -183,6 +229,17 @@ Expected Result Shape: An array of objects (with each object representing a pres
 console.log('Problem 7:')
 
 // Add your code below this line
+
+const shortTermPresidents = presidents.filter(function (name) {
+  const dt1 = new Date(name.took_office)
+  const dt2 = new Date(name.left_office)
+
+  let diff =(dt2.getTime() - dt1.getTime()) / 1000;
+      diff /= (60 * 60 * 24);
+  return Math.abs(Math.round(diff/365.25)) < 4
+})
+
+console.log(shortTermPresidents)
 
 // Add your code above this line
 
