@@ -42,7 +42,12 @@ Expected Result Shape: A string representing the full name of the president that
 console.log('Problem 1:')
 
 // Add your code below this line
+const firstWhigPresident = presidents.find((name)=>{
+  return name.party === "Whig";
+  return foundPresident.president;
+})
 
+console.log(firstWhigPresident.president);
 // Add your code above this line
 
 /** added for formatting purposes **/
