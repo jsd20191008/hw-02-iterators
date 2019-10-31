@@ -42,7 +42,11 @@ Expected Result Shape: A string representing the full name of the president that
 console.log('Problem 1:')
 
 // Add your code below this line
+const firstWhigPresident = presidents.filter(function (president) {
+  return president.party === 'Whig'
+})
 
+console.log(firstWhigPresident)
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -66,8 +70,11 @@ console.log('Problem 2:')
 
 // Add your code below this line
 
+const presidentsNamedJames = presidents.filter(function (name) {
+   return name.president === 'James'
+})
 // Add your code above this line
-
+console.log(presidentsNamedJames)
 /** added for formatting purposes **/
 console.log('')
 console.log('-----------------')
@@ -114,7 +121,11 @@ Expected Result Shape: An array of objects (with each object representing a pres
 console.log('Problem 4:')
 
 // Add your code below this line
+const presidentsBetween1850and1900 = presidents.filter((president) => {
+  return president.took_office === '1850-1900';
+})
 
+console.log(presidentsBetween1850and1900);
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -137,7 +148,12 @@ Expected Result Shape: An array of objects (with each object representing a pres
 console.log('Problem 5:')
 
 // Add your code below this line
+const livingPresidents = presidents.filter((alive) => {
+       return alive.death_year === null
 
+})
+
+console.log(livingPresidents)
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -160,7 +176,11 @@ Expected Result Shape: A string representing the full name of the president that
 console.log('Problem 6:')
 
 // Add your code below this line
+const firstRepublican = presidents.filter(function (president) {
+  return president.party === 'Republican'
+})
 
+console.log(firstRepublican)
 // Add your code above this line
 
 /** added for formatting purposes **/
