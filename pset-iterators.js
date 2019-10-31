@@ -42,6 +42,17 @@ Expected Result Shape: A string representing the full name of the president that
 console.log('Problem 1:')
 
 // Add your code below this line
+const firstWhigPresident = presidents.find(function(president) {
+  if (president.party === 'Whig') {
+    return president.president
+  }
+})
+
+console.log(firstWhigPresident.president)
+
+
+
+
 
 // Add your code above this line
 
@@ -65,6 +76,13 @@ Expected Result Shape: An array of objects (with each object representing a pres
 console.log('Problem 2:')
 
 // Add your code below this line
+  const presidentsNamedJames = presidents.filter(function(name) {
+  return name.president.match(/James/)
+
+})
+
+console.log(presidentsNamedJames)
+
 
 // Add your code above this line
 
@@ -93,6 +111,12 @@ console.log('Problem 3:')
 
 // Add your code below this line
 
+const presidentialParties = presidents.map(function(president) {
+  return president.party
+})
+
+console.log(presidentialParties)
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -114,6 +138,14 @@ Expected Result Shape: An array of objects (with each object representing a pres
 console.log('Problem 4:')
 
 // Add your code below this line
+
+  const presidentsBetween1850and1900 = presidents.filter(function (name) {
+    let splits = name.took_office.split('-')
+    return splits[0] >= 1850 && splits[0] <= 1900
+
+})
+
+console.log(presidentsBetween1850and1900)
 
 // Add your code above this line
 
@@ -138,6 +170,15 @@ console.log('Problem 5:')
 
 // Add your code below this line
 
+const livingPresidents = presidents.filter((president) => {
+return president.death_year === null
+
+})
+
+console.log(livingPresidents)
+
+
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -160,12 +201,18 @@ Expected Result Shape: A string representing the full name of the president that
 console.log('Problem 6:')
 
 // Add your code below this line
+const firstRepublican = presidents.find(function(president) {
+  if (president.party === 'Republican') {
+    return president
+  }
+})
 
+console.log(firstRepublican)
 // Add your code above this line
 
 /** added for formatting purposes **/
-console.log('')
-console.log('-----------------')
+//console.log('')
+//console.log('-----------------')
 
 /***********
 Problem 7:
@@ -180,12 +227,18 @@ called `shortTermPresidents`, declared with const
 Expected Result Shape: An array of objects (with each object representing a president)
 
 ************/
-console.log('Problem 7:')
+//console.log('Problem 7:')
+
+  const shortTermPresidents = presidents.filter(function(president) => {
+  const startDate = president.took_office.split('-')
+
+)}
+
+  console.log(shortTermPresidents)
 
 // Add your code below this line
 
 // Add your code above this line
 
 /** added for formatting purposes **/
-console.log('')
-console.log('-----------------')
+//console.log('-')
