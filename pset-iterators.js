@@ -43,6 +43,12 @@ console.log('Problem 1:')
 
 // Add your code below this line
 
+const firstWhigPresident = presidents.find((president) => {
+  return president.party === 'Whig'
+})
+
+console.log(firstWhigPresident.president)
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -65,6 +71,12 @@ Expected Result Shape: An array of objects (with each object representing a pres
 console.log('Problem 2:')
 
 // Add your code below this line
+
+ const presidentsNamedJames = presidents.filter((president) => {
+   return president.president.split(' ')[0] === 'James'
+ })
+
+ console.log(presidentsNamedJames)
 
 // Add your code above this line
 
@@ -93,6 +105,13 @@ console.log('Problem 3:')
 
 // Add your code below this line
 
+const presidentialParties = presidents.map((president) => {
+  return president.party
+})
+
+console.log(presidentialParties)
+
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -104,7 +123,8 @@ Problem 4:
 
 1. Using the `presidents` array, return a
 list of the presidents who took office
-between 1850 and 1900. Save the data in a variable called `presidentsBetween1850and1900`, declared with const
+between 1850 and 1900. Save the data in a variable called `presidentsBetween1850and1900`,
+declared with const
 
 2. Print `presidentsBetween1850and1900` to the console
 
@@ -114,6 +134,13 @@ Expected Result Shape: An array of objects (with each object representing a pres
 console.log('Problem 4:')
 
 // Add your code below this line
+
+const presidentsBetween1850and1900 = presidents.filter((president) => {
+  return president.took_office.split('-')[0] >= 1850 && president.took_office.split('-')[0] <= 1900
+})
+console.log(presidentsBetween1850and1900)
+
+
 
 // Add your code above this line
 
@@ -138,6 +165,14 @@ console.log('Problem 5:')
 
 // Add your code below this line
 
+const livingPresidents = presidents.filter((president) => {
+  return president.death_year === null
+
+})
+
+console.log(livingPresidents)
+
+
 // Add your code above this line
 
 /** added for formatting purposes **/
@@ -154,12 +189,20 @@ called `firstRepublican`, declared with const
 
 2. Print `firstRepublican` to the console
 
-Expected Result Shape: A string representing the full name of the president that meets the criteria
+Expected Result Shape: A string representing the full name of the president
+that meets the criteria
 
 ************/
 console.log('Problem 6:')
 
 // Add your code below this line
+
+const firstRepublican = presidents.find((president) => {
+  return president.party === 'Republican'
+  // return president.president.split(' ')[0]
+})
+
+console.log(firstRepublican.president.split(' ')[0])
 
 // Add your code above this line
 
@@ -183,6 +226,22 @@ Expected Result Shape: An array of objects (with each object representing a pres
 console.log('Problem 7:')
 
 // Add your code below this line
+
+// 1. determine years in office by returning year left office minus year took offiuce
+// 2. convert the strings to a varioable
+
+const notCurrentInOffice = presidents.filter((president) => {
+  return president.left_office !== null
+})
+
+// console.log(notCurrentInOffice)
+
+const shortTermPresidents = notCurrentInOffice.filter((president) => {
+  return (president.left_office.split('-')[0] - president.took_office.split('-')[0]) < 4
+
+})
+
+console.log(shortTermPresidents)
 
 // Add your code above this line
 
